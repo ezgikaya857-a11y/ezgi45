@@ -1,0 +1,229 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f4f8;
+    color: #2c3e50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 650px;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: #1e3a8a;
+}
+
+/* Cüzdan Alanı */
+.wallet-section {
+    text-align: right;
+}
+
+#connectWalletBtn {
+    background-color: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+#connectWalletBtn:hover {
+    background-color: #1d4ed8;
+}
+
+#walletAddress {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-top: 5px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #e2e8f0;
+    margin: 20px 0;
+}
+
+/* Kart Yapıları */
+.card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.admin-card {
+    border-left: 5px solid #f59e0b;
+    display: none; /* İlk etapta gizli, JS adminliği doğrulayınca açar */
+}
+
+h3 {
+    font-size: 1.05rem;
+    color: #334155;
+    margin-bottom: 15px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: border 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+#addCandidateBtn {
+    background-color: #f59e0b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#addCandidateBtn:hover {
+    background-color: #d97706;
+}
+
+/* Aday Listesi Görünümü */
+.candidates-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.candidate-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.candidate-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.candidate-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.badge {
+    background: #eff6ff;
+    color: #1e40af;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 6px;
+}
+
+.candidate-info h4 {
+    font-size: 1.05rem;
+    color: #1e293b;
+}
+
+.vote-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.vote-count {
+    font-weight: 700;
+    color: #059669;
+    font-size: 1.1rem;
+}
+
+.vote-btn {
+    background-color: #10b981;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.vote-btn:hover:not(:disabled) {
+    background-color: #059669;
+}
+
+.vote-btn:disabled {
+    background-color: #cbd5e1;
+    color: #94a3b8;
+    cursor: not-allowed;
+}
+
+/* Durum ve Yükleniyor Yazıları */
+.loading-text, .no-data {
+    text-align: center;
+    color: #64748b;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.error-text {
+    text-align: center;
+    color: #ef4444;
+}
+
+/* Bildirim Paneli stilleri */
+.status {
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    min-height: 45px;
+    margin-top: 10px;
+}
+
+.info { background-color: #eff6ff; color: #1e40af; }
+.success { background-color: #ecfdf5; color: #065f46; }
+.error { background-color: #fef2f2; color: #991b1b; }
